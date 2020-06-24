@@ -1,16 +1,35 @@
-## Video Streaming with Flask Example
+## Face recongition ( Model and Flask app )
 
-### Website
-http://www.chioka.in
+### Model 
+The models fih how to detect/recognitze faces in both images and videos.
 
-### Description
-Modified to support streaming out with webcams, and not just raw JPEGs.
+1. To test image:
+go to directory and run : 
+ python3 recognize.py --detector face_detection_model \
+	--embedding-model openface_nn4.small2.v1.t7 \
+	--recognizer output/recognizer.pickle \
+	--le output/le.pickle --image images/mohamed.jpg
 
-### Credits
-Most of the code credits to Miguel Grinberg, except that I made a small tweak. Thanks!
-http://blog.miguelgrinberg.com/post/video-streaming-with-flask
+2. To test video: 
 
-### Usage
-1. Install Python dependencies: cv2, flask. (wish that pip install works like a charm)
-2. Run "python main.py".
-3. Navigate the browser to the local webpage.
+Go to directory and run:
+
+ python3 recognize_video.py --detector face_detection_model \
+	--embedding-model openface_nn4.small2.v1.t7 \
+	--recognizer output/recognizer.pickle \
+	--le output/le.pickle
+
+
+
+
+### Flask Video [ Almost done with it ]
+
+### Usage 
+
+Go to Directory and run: 
+
+
+python3 main.py --detector face_detection_model \
+	--embedding-model openface_nn4.small2.v1.t7 \
+	--recognizer output/recognizer.pickle \
+	--le output/le.pickle
